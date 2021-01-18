@@ -1,4 +1,7 @@
-﻿using System;
+//Aslı Kurt
+//18.01.2020
+
+using System;
 
 namespace ClassMetotDemo
 {
@@ -14,7 +17,7 @@ namespace ClassMetotDemo
     class Program
     {
         static void Main(string[] args)
-        {
+        {//process of defining customers' informations
             Customers customer1 = new Customers();
             customer1.ID = 1;
             customer1.name = "Asli ";
@@ -56,17 +59,22 @@ namespace ClassMetotDemo
             customer5.totalAmount = 0;
 
             Customers[] eachCustomer = new Customers[] { customer1, customer2, customer3, customer4, customer5 };
-
+            //opens array and adds customers into it
+            
             CustomerManager manage = new CustomerManager();
-
+            //to use methods
+            
             Console.WriteLine(" PRESS '0' BUTTON TO QUIT. ");
             Console.WriteLine("****************************");
             Console.WriteLine("PRESS ANY NUMBER TO CONTINUE.");
-
+            //CHOICE MENU
+            
             int choice = Convert.ToInt32(Console.ReadLine());
-
+            //converts string to int
+            
             while (choice!=0)
-            {
+            {//if user press to '0' program ends
+             //otherwise program starts to run
 
                 Console.WriteLine("****************************");
                 Console.WriteLine("*     1. ADD CUSTOMERS     *");
@@ -75,14 +83,14 @@ namespace ClassMetotDemo
                 Console.WriteLine("****************************");
 
                 Console.WriteLine("\n\n* *  ENTER YOUR CHOICE   * *\n\n");
-
-
+                //CHOICE MENU
+                
                 int x = Convert.ToInt32(Console.ReadLine());
-
+                //converts string to int
+                
                 switch (x)
-                {
-
-                    case 1:
+                {// user make choices looking from the menu to continue 
+                    case 1: //if user press to '1' program adds customers to the list
                         Console.WriteLine("\n!!ADDING CUSTOMERS!!\n");
                         manage.addCustomer(customer1);
                         manage.addCustomer(customer2);
@@ -91,12 +99,12 @@ namespace ClassMetotDemo
                         manage.addCustomer(customer5);
                         break;
 
-                    case 2:
+                    case 2: //if user press to '2' program prints customers from the list
                         Console.WriteLine("\n!!PRINTING CUSTOMERS!!\n");
                         manage.printCustomer(eachCustomer);
                         break;
 
-                    case 3:
+                    case 3: //if user press to '3' program deletes customers from the list
                         Console.WriteLine("\n!!DELETING CUSTOMERS!!\n");
                         manage.deleteCustomer(customer1);
                         manage.deleteCustomer(customer2);
@@ -106,21 +114,11 @@ namespace ClassMetotDemo
                         Console.WriteLine("\n!!LIST IS EMPTY!!\n");
                         break;
 
-                    default:
+                    default: // if user press other than 1, 2 or 3, it means default case
                         Console.WriteLine("Default case");
                         break;
                 }
-
             }
-
-            
-
-            
-            
-
-            
-            
-
         }
     }
 }
