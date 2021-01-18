@@ -10,7 +10,7 @@ namespace ClassMetotDemo
     
     follow up customers in a bank
     add to customer specifications in class
-    create CustomerManager class and simulate tehm by using add, list or delete customer methods.
+    create CustomerManager class and simulate them by using add, list or delete customer methods.
     
       */
 
@@ -87,7 +87,7 @@ namespace ClassMetotDemo
                 
                 int x = Convert.ToInt32(Console.ReadLine());
                 //converts string to int
-                
+                int lastChoice;
                 switch (x)
                 {// user make choices looking from the menu to continue 
                     case 1: //if user press to '1' program adds customers to the list
@@ -97,11 +97,27 @@ namespace ClassMetotDemo
                         manage.addCustomer(customer3);
                         manage.addCustomer(customer4);
                         manage.addCustomer(customer5);
+                        
+                        Console.WriteLine(" PRESS '0' BUTTON TO QUIT. ");
+                        Console.WriteLine("****************************");
+                        Console.WriteLine("PRESS ANY NUMBER TO CONTINUE.");
+
+                        lastChoice = Convert.ToInt32(Console.ReadLine());
+                        choice = lastChoice;
+                        
                         break;
 
                     case 2: //if user press to '2' program prints customers from the list
                         Console.WriteLine("\n!!PRINTING CUSTOMERS!!\n");
                         manage.printCustomer(eachCustomer);
+                        
+                        Console.WriteLine(" PRESS '0' BUTTON TO QUIT. ");
+                        Console.WriteLine("****************************");
+                        Console.WriteLine("PRESS ANY NUMBER TO CONTINUE.");
+
+                        lastChoice = Convert.ToInt32(Console.ReadLine());
+                        choice = lastChoice;
+                        
                         break;
 
                     case 3: //if user press to '3' program deletes customers from the list
@@ -112,6 +128,14 @@ namespace ClassMetotDemo
                         manage.deleteCustomer(customer4);
                         manage.deleteCustomer(customer5);
                         Console.WriteLine("\n!!LIST IS EMPTY!!\n");
+                        
+                        Console.WriteLine(" PRESS '0' BUTTON TO QUIT. ");
+                        Console.WriteLine("****************************");
+                        Console.WriteLine("PRESS ANY NUMBER TO CONTINUE.");
+
+                        lastChoice = Convert.ToInt32(Console.ReadLine());
+                        choice = lastChoice;
+                        
                         break;
 
                     default: // if user press other than 1, 2 or 3, it means default case
